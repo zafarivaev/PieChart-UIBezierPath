@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             .init(ratio: 0.15, color: .darkGray),
             .init(ratio: 0.2, color: .systemYellow),
             .init(ratio: 0.05, color: .systemRed),
-            .init(ratio: 0.25, color: .systemTeal),
+            .init(ratio: 0.1, color: .systemTeal),
             .init(ratio: 0.3, color: .systemPurple),
             .init(ratio: 0.2, color: .systemBlue),
         ]

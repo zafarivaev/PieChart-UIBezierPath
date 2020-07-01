@@ -26,23 +26,29 @@ import UIKit
     
     // MARK: - Actions
     private func drawSegments(_ segments: [Segment]) {
+        // Obtain the center point of the pie chart
         let center = CGPoint(
             x: bounds.width / 2,
             y: bounds.height / 2
         )
         
+        // Get the radius of the pie chart
         let radius = max(
             bounds.width / 2,
             bounds.height / 2
         )
         
+        // Sort segments by their ratios in the descending order
         let sortedSegments = segments.sorted(by: >)
         
+        // Set the starting angle
         var startAngle: CGFloat = (3 * .pi) / 2
         
         for segment in sortedSegments {
+            // Obtain the ending angle based on the segment's ratio
             let endAngle = (startAngle + (((segment.ratio * 360) * .pi) / 180))
             
+            // Draw the segment here
             drawSegment(
                 center: center,
                 radius: radius,
@@ -50,6 +56,8 @@ import UIKit
                 endAngle: endAngle,
                 color: segment.color
             )
+            
+            // Set the starting angle to the ending angle of the drawn segment
             startAngle = endAngle
         }
         
